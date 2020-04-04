@@ -9,8 +9,7 @@ bool f(int x, int y)
     return x > y;
 }
 
-int main()
-{
+void vectorDemo(){
     vector<int> A = {5, 12, 3, 72};
 
     sort(A.begin(), A.end()); //{3,5,12,72}
@@ -42,4 +41,9 @@ int main()
     {
         cout << x << " ";
     }
+}
+
+int main()
+{
+    
 }
