@@ -13,8 +13,17 @@ class Node
 {
 public:
     int data;
-    Node *next
+    Node *next;
 };
+
+void printList(Node *n)
+{
+    while (n != NULL)
+    {
+        cout << n->data << " ";
+        n = n->next;
+    }
+}
 
 // program to create a simple linkedlist with 3 nodes
 int main()
@@ -38,7 +47,9 @@ int main()
     third->data = 3;
     third->next = NULL;
 
-    //alla the linked list are ready
+    //all the linked list are ready
+
+    printList(head);
 
     return 0;
 }
