@@ -47,6 +47,34 @@ void insertAfter(Node *prev_node, int new_data)
     prev_node->next = new_node;
 }
 
+void append(Node **head_ref, int new_data)
+{
+    //1.allocate node
+    Node *new_node = new Node();
+
+    Node *last = *head_ref;
+
+    //2 put in the data
+    new_node->data = new_data;
+
+    //3 make the new node's next point to null
+    new_node->next = NULL;
+
+    //4 if the linked list is empty then make a new node as head
+    if (*head_ref == NULL)
+    {
+        *head_ref = new_node;
+        return;
+    }
+
+    //5 else traverse the list till the last node
+    while (last->next != NULL)
+        last = last->next;
+
+    //6 change the next of last node
+    last->next = new_node;
+}
+
 int main()
 {
     Node *head = NULL;
