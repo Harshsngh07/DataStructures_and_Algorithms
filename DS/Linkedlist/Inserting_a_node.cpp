@@ -3,11 +3,12 @@ using namespace std;
 
 class Node
 {
+public:
     int data;
     Node *next;
 };
 
-void pushNode(Node **head_ref, int new_data)
+void push(Node **head_ref, int new_data)
 {
     // 1. Allocating node
     Node *new_node = new Node();
@@ -94,7 +95,7 @@ int main()
 
     //insert 7 at the beginning
     //sp linked list becomes 7-> 6 -> Null
-    pushNode(&head, 7);
+    push(&head, 7);
 
     // Insert 1 at the beginning.
     // So linked list becomes 1->7->6->NULL
