@@ -1,25 +1,19 @@
-#include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
 
 int main()
 {
-    int n;
+    int n, petya, vasya, tonya, counter = 0;
     cin >> n;
-    int a[n][n];
-    int submittedProblem = 0;
     for (int i = 0; i < n; i++)
-        for (int j = 0; j < 3; j++)
-            cin >> a[i][j];
-
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < 3; j++)
+    {
+        cin >> petya >> vasya >> tonya;
+        if (petya + vasya + tonya >= 2)
         {
-            if ((a[i][j] && (a[i][j + 1]) == 1) || ((a[i][j] && a[i][j + 2]) == 1) || ((a[i][j + 1] && a[i][j + 2]) == 1))
-            {
-                submittedProblem++;
-                //cout << submittedProblem << endl;
-                break;
-            }
+            counter++;
         }
-    cout << submittedProblem << endl;
+    }
+    cout << counter;
+    return 0;
 }
