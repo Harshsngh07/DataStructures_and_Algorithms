@@ -1,4 +1,4 @@
-//g++  5.4.0
+
 
 #include <iostream>
 using namespace std;
@@ -19,10 +19,10 @@ int main()
        if (temp == stones[i+1])
            count++;
        temp = stones[i+1];
-   }
+    }
    cout <<count;
-       
-
-
-
 }
+
+
+
+
