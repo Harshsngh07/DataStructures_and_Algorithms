@@ -17,7 +17,6 @@ int main()
         {
             tram -= a[i];
             tram += b[i];
-            //cout << tram;
             v.push_back(tram);
         }
     }
