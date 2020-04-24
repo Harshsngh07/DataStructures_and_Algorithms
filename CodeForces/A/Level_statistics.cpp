@@ -1,29 +1,26 @@
-//g++  5.4.0
-
 #include <bits/stdc++.h>
+ 
+#define forn(i, n) for (int i = 0; i < int(n); i++)
+ 
 using namespace std;
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-        int count(0);
-        int p[n],c[n];
-         for(int i=0;i<n;i++)
-             cin>>p[i]>>c[i];
-         
-         for(int i=1;i<n;i++)
-         {
-             if((p[i]>=c[i] && p[i]>=p[i-1]) && (c[i]>=c[i-1]))
-                 count++;
-         }
-    
-        if(count == n-1)
-            cout<<"YES"<<endl;
-        else
-            cout<<"NO"<<endl;
-    }
+ 
+ 
+int main() {
+	int tc;
+	scanf("%d", &tc);
+	while (tc--){
+		int n;
+		scanf("%d", &n);
+		int p = 0, c = 0;
+		bool fl = true;
+		forn(i, n){
+			int x, y;
+			scanf("%d%d", &x, &y);
+			if (x < p || y < c || y - c > x - p)
+				fl = false;
+			p = x, c = y;
+		}
+		puts(fl ? "YES" : "NO");
+	}
+	return 0;
 }
