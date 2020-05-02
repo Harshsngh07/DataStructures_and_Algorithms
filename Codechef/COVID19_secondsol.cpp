@@ -1,5 +1,3 @@
-//g++  5.4.0
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,15 +19,25 @@ int main()
         {   
             count = 1;
             for(int j=i;j<n-1;j++)
-                if(fabs(a[j]-a[j+1]<=2)
+            {
+                if(fabs(a[j]-a[j+1])<=2)
                     count++;
-            
-            v.push_back(count);
-                   
+                else
+                   break;
+            }
+
             for(int j=i; j>0;j--)
+            {          
                    if(fabs(a[j]-a[j-1])<=2)
-                       count1++;
-            v1.push_back(count1);
+                       count++;
+                   else
+                       break;
+            }
+            v.push_back(count);
         }
+              
+          int minel = *min_element(v.begin(),v.end());
+          int maxel = *max_element(v.begin(),v.end());
+          cout << minel << " "<<maxel<<endl;
     }
 }
