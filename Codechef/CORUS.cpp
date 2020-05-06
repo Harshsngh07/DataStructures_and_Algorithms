@@ -3,38 +3,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
+ int main()
 {
-     long long int t;
-    cin >> t;
-    while(t--)
-    {
-        long long int n,q;
-        cin >> n>>q;
-        /*vector<string> s;
-        string temp;
-        cin >> temp;
-        s.push_back(temp);*/
-        
-        string s; cin >> s;
-        
-        int a[q];
-        for(int i=0;i<q;i++)
-            cin >> a[i];
-        
-        int count(0),remP(0);
-        int len = s.length();
-        sort(s.begin(),s.end());
-
-        for(int i=0;i<q;i++)
-        {
-            for(int j=0;j<a[i];j++)
-            {
-                count = distance(s.begin(),unique(s.begin(),s.begin() + len));
-                remP = len - count;
-            }
-        }
-        cout << len << " "<<count<< " "<<remP;
-    }
+    string s;
     
+      cin>>s;
+      
+      map<char , int >m;
+           map<char , int >freq;
+
+      
+         map<char , int >::iterator itr;
+       
+      for(long i=0;i<s.length();i++)
+        m[s[i]]++;
+        
+         
+     cout<<"Before"<<endl;
+     for(int i=0;i<2;i++)
+     {
+        for(itr=m.begin();itr!=m.end();itr++)     
+        {
+            itr->second -= 1; 
+            cout<<itr->first<<" - "<<itr->second<<endl;
+        }
+     }
+     
+     int total(0);
+        for(itr = m.begin();itr!=m.end();++itr)
+        {
+            total+=itr->second;
+        }
+     
+         cout << total<<endl;
+     
+    /* cout<<"After"<<endl;
+          for(auto &e: m) 
+            cout<<e.first<<" - "<<e.second<<endl; */
+     
 }
