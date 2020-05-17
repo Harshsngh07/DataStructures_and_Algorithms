@@ -36,9 +36,9 @@ int maxSubarraySum(int a[], int size)
     for (int i = 0; i < size; i++)
     {
         max_ending += a[i];
-        if (max_ending < a[i])
+        if (max_ending < 0)
         {
-            max_ending = a[i];
+            max_ending = 0;
             s = i + 1;
         }
 
