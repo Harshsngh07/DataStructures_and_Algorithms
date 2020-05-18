@@ -28,15 +28,16 @@ void printList(Node *n)
 // program to create a simple linkedlist with 3 nodes
 int main()
 {
-    Node *head = NULL;
-    Node *second = NULL;
-    Node *third = NULL;
+    Node *head = new Node();
+    Node *second = new Node();
+    Node *third = new Node();
 
     //allocating 3 nodes in the heap
 
-    head = new Node();
-    second = new Node();
-    third = new Node();
+    // we can intialize the node pointers in the below manner also
+    // head = new Node();
+    // second = new Node();
+    // third = new Node();
 
     head->data = 1;      //assigning data in the first node
     head->next = second; // linking first node with second node
