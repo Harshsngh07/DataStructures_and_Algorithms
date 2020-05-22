@@ -41,6 +41,7 @@ int findLCA(Node *root, int n1, int n2)
 {
     vector<int> path1, path2;
 
+    // if their isnt any path then it will return -1.
     if (!findPath(root, path1, n1) || !findPath(root, path2, n2))
         return -1;
 
