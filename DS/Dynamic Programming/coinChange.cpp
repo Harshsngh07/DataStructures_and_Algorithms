@@ -26,6 +26,26 @@ int minCoins(int n, int coins[], int T, int dp[])
     return dp[n];
 }
 
+int minCoinsBu(int N, int coins[], int T)
+{
+    int dp[100] = {0};
+
+    //iterating over 1...amount which is 1....n in our case
+    for (int n = 1; n <= N; n++)
+    {
+        dp[n] = INT_MAX;
+        for (int i = 0; i < T; i++)
+        {
+            if (n - coins[i] >= 0)
+            {
+                int subProb = dp[n - coins[i]];
+                dp[n] = min(dp[n], subProb + 1);
+            }
+        }
+    }
+    return dp[N];
+}
+
 int main()
 {
     int N = 15;
@@ -33,5 +53,5 @@ int main()
     int dp[100] = {0};
     int T = sizeof(coins) / sizeof(int);
 
-    cout << minCoins(N, coins, T, dp) << endl;
+    cout << minCoinsBu(N, coins, T) << endl;
 }
