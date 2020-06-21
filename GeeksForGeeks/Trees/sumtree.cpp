@@ -4,7 +4,7 @@ int sum(Node* root)
 {
     if(root==NULL) return 0;
 
-    return root->left+root->data+root->right;
+    return sum(root->left)+root->data+sum(root->right);
 }
 
 
