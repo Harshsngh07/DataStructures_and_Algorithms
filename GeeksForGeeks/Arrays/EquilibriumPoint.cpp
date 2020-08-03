@@ -12,7 +12,7 @@ int equilibriumPoint(long long a[], int n)
         sum -= a[i]; // sum is now right sum for index i
 
         if (leftsum == sum)
-            return i;
+            return i+1;
 
         leftsum += a[i];
     }
