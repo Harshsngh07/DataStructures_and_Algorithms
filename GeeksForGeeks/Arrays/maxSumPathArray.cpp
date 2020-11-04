@@ -1,8 +1,8 @@
 int max_path_sum(int ar1[], int ar2[], int m, int n)
 {
     int i = 0, j = 0;
-    int  result = 0, sum1 = 0, sum2 = 0;
-    
+    int result = 0, sum1 = 0, sum2 = 0;
+
     // Using two pointers to iterate over two arrays
     while (i < m && j < n)
     {
@@ -18,7 +18,7 @@ int max_path_sum(int ar1[], int ar2[], int m, int n)
         {
             result += max(sum1, sum2);
             sum1 = 0, sum2 = 0;
-            while (i < m &&  j < n && ar1[i] == ar2[j])
+            while (i < m && j < n && ar1[i] == ar2[j])
             {
                 result = result + ar1[i++];
                 j++;
@@ -27,13 +27,13 @@ int max_path_sum(int ar1[], int ar2[], int m, int n)
     }
     // if jth pointer reaches end
     while (i < m)
-        sum1  +=  ar1[i++];
+        sum1 += ar1[i++];
     // if ith pointer reaches end
     while (j < n)
-        sum2 +=  ar2[j++];
-        
+        sum2 += ar2[j++];
+
     // last maximum sum to be added after the end of the loop
-    result +=  max(sum1, sum2);
-    
+    result += max(sum1, sum2);
+
     return result;
 }
