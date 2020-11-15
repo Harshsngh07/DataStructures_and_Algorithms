@@ -4,16 +4,6 @@ using namespace std;
 
 typedef long long ll;
 
-bool helper(int a[], int n)
-{
-    int count(0);
-    for (int i = 1; i < n; i++)
-        if (a[i] == a[i - 1])
-            count++;
-    if (count + 1 == n)
-        return true;
-    return false;
-}
 
 int main()
 {
@@ -21,14 +11,13 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        int n,x, y;
         cin >> n;
         int a[n];
-        int sum(0);
-        for (int i = 0; i < n; i++)
+        for ( x = 0; x < n; x++)
         {
-            cin >> a[i];
-            sum += a[i];
+            cin >> a[x];
+            
         }
         if (n == 1)
             cout << a[0] << endl;
@@ -42,9 +31,9 @@ int main()
         else
         {
             sort(a,a+n);
-            i = max(a[0]+a[3], a[2]+a[1]);
-            j = max(a[0]+a[1], a[2]+a[3]);
-            cout << min(i,j) << endl;
+             x = max(a[0]+a[3], a[2]+a[1]);
+             y = max(a[0]+a[1]+a[2],a[3]);
+            cout << min(x,y) << endl;
         }
         
     }
