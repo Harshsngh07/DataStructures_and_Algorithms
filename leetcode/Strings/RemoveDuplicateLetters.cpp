@@ -1,8 +1,9 @@
 class Solution
 {
 public:
-    string smallestSubsequence(string s)
+    string removeDuplicateLetters(string s)
     {
+
         int n = s.length();
         int lastIndex[26];
         memset(lastIndex, -1, sizeof(lastIndex));
