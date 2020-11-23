@@ -56,3 +56,52 @@ int main()
     addEdge(adj, 5, 6);
     BFS(adj, V);
 }
+
+//second code
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+void bfs(int s, vector<int> adj[], bool vis[], int V)
+{
+    queue<int> q;
+    q.push(s);
+    vis[s] = true;
+
+    while(!q.empty())
+    {
+        int curr =  q.front();
+        cout << curr << " ";
+        q.pop();
+        for(int i=0;i<adj[curr].size();i++)
+        {
+            if(vis[adj[curr][i]]==false)
+            {
+                vis[adj[curr[i]]]=true;
+                q.push(adj[curr][i]);
+            }
+        }
+    }
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int V, E;
+        cin >> V >> E;
+        vector<int> adj(V);
+        bool vis[V] = {false};
+
+        for (int i = 0; i < E; i++)
+        {
+            int src, dest;
+            cin >> src >> dest;
+            adj[src].push_back(dest);
+        }
+
+        bfs(0,adj,vis,V);
+    }
+}

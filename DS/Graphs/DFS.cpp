@@ -62,3 +62,48 @@ int main()
             " (starting from vertex 2) \n";
     g.DFS(2);
 }
+
+//second code
+#include <bits/stdc++.h>
+using namespace std;
+
+void dfs(int s, vector<int> g[], bool *vis)
+{
+    vis[s] = true;
+    cout << s << " ";
+    for (int i = 0; i < g[s].size(); i++)
+    {
+        if (vis[g[s][i] == false])
+            dfs(g[s][i], g, vis);
+    }
+}
+
+int main()
+{
+
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int V, E;
+        cin >> V >> E;
+
+        vector<int> g[V];
+        bool vis[V];
+
+        memset(vis, false, sizeof(vis));
+
+        for (int i = 0; i < E; i++)
+        {
+            int src, dest;
+            cin >> src >> dest;
+            g[src].push_back(dest);
+            g[dest].push_back(src);
+        }
+
+        dfs(0, g, vis);
+        cout << endl;
+    }
+
+    return 0;
+}
