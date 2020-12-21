@@ -25,7 +25,7 @@ vector<int> topoSort(int V, vector<int> adj[])
     {
         int x = s.top();
         s.pop();
-        a.push_back(x);
+        v.push_back(x);
     }
     return v;
 }
